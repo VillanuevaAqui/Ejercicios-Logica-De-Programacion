@@ -1,0 +1,37 @@
+body {
+    
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: #101010;
+    color: #ccc;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#main-container {
+
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 50px;
+    display: flex;
+    padding: 50px;
+
+}
+
+.container-degrees-converter {
+
+    display: inline-block;
+    width: 300px;
+    background: #ccc;
+    color: #101010;
+    border-radius: 10px;
+
+
+}
+
+
+
