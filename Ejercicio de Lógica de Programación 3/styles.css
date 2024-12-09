@@ -1,0 +1,32 @@
+body {
+    
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: #101010;
+    color: #ccc;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#main-container {
+
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.card-factorial {
+
+    padding: 20px;
+    background-color: #ccc;
+    color: #101010;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+
+}

@@ -9,7 +9,7 @@ function getNumbers () {
         let input = prompt("Ingrese el numero: " + (arrNumber.length + 1));
         parseInt(input);
 
-        if (isNaN(input) || input == "" || input == null){
+        if (isNaN(input) || input === "" || input === null){
 
             console.log("Ingrese un valor valido");
         } else {
