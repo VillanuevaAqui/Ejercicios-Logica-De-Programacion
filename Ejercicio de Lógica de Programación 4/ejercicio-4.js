@@ -23,15 +23,22 @@ function getNumber() {
 
 function fibonacci(number){
 
-    const fiboArray = [0, 1];
+    const fiboArray = [];
     let fiboNumberAnterior = 0;
     let fiboNumber = 1;
 
-    for(let i = 2; i < number; ++i){
+    for(let i = 1; i <= number; ++i){
 
-        fiboNumber = fiboNumber + fiboNumberAnterior;
-        fiboArray.push(fiboNumber); 
-        fiboNumberAnterior = fiboNumber - fiboNumberAnterior ;
+        if (i === 1) {
+            fiboArray.push(0);
+        } else if ( i === 2) {
+            fiboArray.push(1)
+        } else {
+
+            fiboNumber = fiboNumber + fiboNumberAnterior;   
+            fiboNumberAnterior = fiboNumber - fiboNumberAnterior ;
+            fiboArray.push(fiboNumber);
+        }
     }
 
     return(fiboArray);
