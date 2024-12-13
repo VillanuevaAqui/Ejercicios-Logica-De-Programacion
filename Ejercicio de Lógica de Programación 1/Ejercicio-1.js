@@ -31,6 +31,28 @@ function arrSort (arrNumber) {
     return (arrNumber);
 }
 
+
+function numberMatches (arrNumber){
+
+    let countTotal = -1;
+    for (let i = 0; i < arrNumber.length; i++){
+        let count = -1;
+        for (let j = 0; j < arrNumber.length; j ++){
+
+            if (arrNumber[i] === arrNumber[j]){
+                count++;
+            }
+        }   
+        if (count >= 1){
+            countTotal++;
+        }
+    }
+    
+    if (countTotal >= 1){
+        console.log("tienes numeros repetidos")
+    }   
+}
+
 // Recibe una lista de numeros y un id del html, genera un container en el html justo en el id pasado y en ese mismo container genera las cards de los numeros
 
 function cardNumbers (arrNumber, id) {
@@ -54,6 +76,7 @@ function cardNumbers (arrNumber, id) {
 
 let arrNumber = getNumbers();
 arrNumber = arrSort(arrNumber);
+numberMatches(arrNumber);
 
 cardNumbers(arrNumber, "order-numbers");
 cardNumbers(arrNumber.reverse(), "order-numbers-reverse");

@@ -1,46 +1,62 @@
 
 //
 
-function getNumbers () {
+function getNumbers() {
 
-    let number;
+    let number = document.getElementById("number").value;
+    number = parseInt(number);
 
-    while (isNaN(number) || number === "" || number === null || number < 1){
+    if (isNaN(number) || number === "" || number === null || number < 1 || number % 1 !== 0) {
 
-        number = parseInt(prompt("Ingrese el numero: "));
+        alert("Ingrese un numero valido");
+        return 0
 
-        if (isNaN(number) || number === "" || number === null || number < 1 || number % 1 !== 0){
+    } else {
 
-            alert("El numero ingresado no es valido");
-        } else {
-
-            return (number);
-        }
+        return (number);
     }
 }
 
-function compare (number, numberOriginal) {
+function compare(number, numberOriginal) {
 
     if (number === numberOriginal) {
 
-        return "Felicidades acertaste"
+        return true
     }
 
-    return ("Intenta de nuevo");
+    return false
 }
 
-function randomNumberGenerator (max){
+function randomNumberGenerator(max) {
 
-    return Math.floor(Math.random() * max)    
+    return Math.floor(Math.random() * max);
 }
 
-function cardDialog() {
+function cardDialog(text) {
 
-    const mainContainer = document.getElementById("main-container");
-    const dialogContainer = document.createElement("div");
-    const dialog = document.createElement("p");
+    const answer = document.getElementById("answer");
+    const dialog = `<div class = "container-answer">
+                        <p>${text}</p>
+                    </div>`;
 
-    dialog.textContent = 0;
-
-
+    answer.innerHTML = dialog
 }
+
+const numberSecret = randomNumberGenerator(100);
+console.log(numberSecret)
+
+const formNumbers = document.getElementById("form-numbers");
+formNumbers.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    number = getNumbers();
+    const good = compare(number, numberSecret)
+    if (good){
+
+        cardDialog("Felicidades, acertaste")
+    } else {
+        cardDialog("Intenta otra vez")
+    }
+
+});

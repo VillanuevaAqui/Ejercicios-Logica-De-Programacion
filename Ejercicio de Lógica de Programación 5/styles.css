@@ -20,7 +20,7 @@ body {
 
 }
 
-.fibo-container {
+.container-answer {
 
     padding: 20px;
     background-color: #ccc;
@@ -30,3 +30,4 @@ body {
     font-weight: 700;
 
 }
+
